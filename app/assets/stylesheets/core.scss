@@ -388,14 +388,14 @@ body.full-width {
 .business_support article.tab-pane { 
   width: auto; 
 }
-.business_support .support-info {
+.business_support .what-you-need-to-know section {
   background: #E1E8E8;
   border-left: 1px solid #BBB;
 }
-.business_support section.support-info:last-child { 
+.business_support .what-you-need-to-know section.last { 
   border-bottom: 1px dotted #BBB; 
 }
-.business_support .support-info h2 {
+.business_support .what-you-need-to-know section h2 {
   @include core-16($line-height: 1.25);
   margin: 0;
   text-align: left;
@@ -406,14 +406,14 @@ body.full-width {
   width: 30%;
   padding: 0.25em;
 }
-.business_support .faux-cell,
-.business_support .faux-cell p,
-.business_support .faux-cell li,
+.business_support .support-detail,
+.business_support .support-detail p,
+.business_support .support-detail li,
 .business_support .long-description p,
 .business_support .long-description li {
   @include core-16;
 }
-.business_support .faux-cell {
+.business_support .support-detail {
   background: #FFF;
   overflow: hidden;
   border-left: 1px solid #BBB;
