@@ -127,6 +127,19 @@ GOVUK.Analytics.startAnalytics = function () {
         }
     };
 
+    var trackTimeSpentOnPage = function () {
+      [2, 5, 10, 30, 60, 120, 180].forEach(function (numberOfSeconds) {
+        setTimeout(function () {
+          var paddedNumberOfSeconds = String("0000" + numberOfSeconds).slice(-3);
+          GOVUK.sendToAnalytics(createEvent("TimeSpentOnPage-" + paddedNumberOfSeconds, false));
+        }, numberOfSeconds * 1000);
+      });
+    };
+
+    if (format !== undefined) {
+      trackTimeSpentOnPage();
+    }
+
     if (GOVUK.Analytics.Trackers[format] !== undefined) prefix = GOVUK.Analytics.Trackers[format].prefix;
     if (typeof trackingStrategy === "function") {
       var isTheSameArtefact = GOVUK.Analytics.isTheSameArtefact(document.URL, document.referrer, trackingStrategy.slugLocation);
