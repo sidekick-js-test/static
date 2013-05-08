@@ -535,8 +535,7 @@
       }
 
       a {
-        &:link { color: #fff; }
-        &:hover { color: #333; }
+        & { color: #fff; }
 
         &.button {
           @include core-19;
